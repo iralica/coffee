@@ -1,0 +1,27 @@
+<script type="text/javascript">
+    function test()
+    {
+        // window.alert("hello");
+        var url = "/coffees";
+
+        var coffee = {};
+        coffee.id = document.getElementById("id").value;
+        coffee.name = document.getElementById("name").value;
+        var json = JSON.stringify(coffee); // объект -> строка
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true); //
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.send(json);
+        // window.alert("url is: " + url);
+    }
+</script>
+
+<p>ver 1</p>
+
+//вводаная форма
+<form name="myform">
+    <input type="text" id="id" name="id"/><br/>
+    <input type="text" id="name" name="name"/>
+</form>
+<button type="button" onclick="test();">Create</button>

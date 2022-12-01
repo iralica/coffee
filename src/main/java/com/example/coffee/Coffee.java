@@ -1,10 +1,18 @@
 package com.example.coffee;
 
-import java.util.UUID;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+import java.util.UUID;
+@Entity
+@Table // esly hotim nazvati tablitu po drugomu
 public class Coffee {
     private final String id;
     private String name;
+    public Coffee()
+    {
+        this("name");
+    }
     public Coffee(String id, String name){
         this.id = id;
         this.name = name;
