@@ -1,13 +1,16 @@
 package com.example.coffee;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.util.UUID;
 @Entity
 @Table // esly hotim nazvati tablitu po drugomu
 public class Coffee {
-    private final String id;
+    @Id
+    private String id;
+    
     private String name;
     public Coffee()
     {
@@ -33,5 +36,17 @@ public class Coffee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Coffee{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
