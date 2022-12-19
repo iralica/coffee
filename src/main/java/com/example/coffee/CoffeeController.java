@@ -53,7 +53,7 @@ public class CoffeeController {
     //     return coffeeRepository.findAll();
     //}
 
-    @GetMapping
+    @GetMapping // http://localhost:8080/coffees
     public String getAllCoffees(Model model)
     {
         // Model позволяет биндить в html-template файл
